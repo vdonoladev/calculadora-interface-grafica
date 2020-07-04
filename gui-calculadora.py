@@ -1,5 +1,21 @@
 from tkinter import *  
 
+def calculates():
+	which_button = selected_operation.get()
+	value_1 = float(entry_field_1.get())
+	value_2 = float(entry_field_2.get())
+	if which_button == 1:
+		resultado = value_1 + value_2
+	elif which_button == 2:
+		resultado = value_1 - value_2
+	elif which_button == 3:
+		resultado = value_1 * value_2
+	elif which_button == 4:
+		resultado = value_1 / value_2
+
+	result_field.delete(0, END)
+	result_field.insert(0, resultado)
+
 root = Tk()  
 root.title('Calculadora')  
 
