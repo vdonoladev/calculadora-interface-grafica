@@ -1,5 +1,6 @@
 from tkinter import *
 
+
 def calculates():
     which_button = selected_operation.get()
     value_1 = float(entry_field_1.get())
@@ -11,15 +12,17 @@ def calculates():
     elif which_button == 3:
         resultado = value_1 * value_2
     elif which_button == 4:
-        resultado = value_1 / value_2  
-       
+        resultado = value_1 / value_2
+
     result_field.delete(0, END)
     result_field.insert(0, resultado)
+
 
 root = Tk()
 root.title('Calculator')
 
-window_title = Label(root, text='Calculator', font=('Helvetica', 18)).grid(row=0, column=0, columnspan=2)
+window_title = Label(root, text='Calculator', font=(
+    'Helvetica', 18)).grid(row=0, column=0, columnspan=2)
 
 label_1 = Label(root, text='Enter a number').grid(row=1, column=0)
 entry_field_1 = Entry(root, text='Número 1', width=10)
@@ -31,21 +34,26 @@ entry_field_2.grid(row=2, column=1)
 
 selected_operation = IntVar()
 
-label_3 = Label(root, text='Choose the desired operation').grid(row=3, column=0, columnspan=2)
+label_3 = Label(root, text='Choose the desired operation').grid(
+    row=3, column=0, columnspan=2)
 
 sum_button = Radiobutton(root, text='+', variable=selected_operation, value=1)
 sum_button.grid(row=4, column=0)
 
-subtraction_button = Radiobutton(root, text='-', variable=selected_operation, value=2)
+subtraction_button = Radiobutton(
+    root, text='-', variable=selected_operation, value=2)
 subtraction_button.grid(row=4, column=1)
 
-multiplication_button = Radiobutton(root, text='x', variable=selected_operation, value=3)
+multiplication_button = Radiobutton(
+    root, text='x', variable=selected_operation, value=3)
 multiplication_button.grid(row=5, column=0)
 
-division_button = Radiobutton(root, text='/', variable=selected_operation, value=4)
+division_button = Radiobutton(
+    root, text='/', variable=selected_operation, value=4)
 division_button.grid(row=5, column=1)
 
-botao = Button(root, text='Calculate operation', command=calculates, width='30').grid(row=6, column=0, columnspan=2)
+botao = Button(root, text='Calculate operation', command=calculates,
+               width='30').grid(row=6, column=0, columnspan=2)
 
 label_4 = Label(root, text='Result').grid(row=7, column=0)
 
